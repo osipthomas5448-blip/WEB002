@@ -1,0 +1,303 @@
+═══════════════════════════════════════════════════════════════
+  PROFITTHEORY — HOW TO ADD A NEW BLOG POST
+  Simple step-by-step instructions for weekly uploads
+═══════════════════════════════════════════════════════════════
+
+You only ever edit ONE file to add a new blog:
+  👉  data/blogs-data.js
+
+That's it. The website automatically shows it everywhere:
+  • Homepage (latest articles grid + hero if featured)
+  • Blog listing page
+  • Sidebar recent posts
+  • Category filters
+  • Related posts on blog detail page
+  • Ticker bar
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1 — OPEN THE DATA FILE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Open:  data/blogs-data.js
+
+You'll see the BLOGS_DATA array starting like:
+
+  const BLOGS_DATA = [
+    {
+      id: 1,
+      slug: "10-side-hustles-students-can-start",
+      ...
+    },
+    ...
+  ];
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2 — ADD YOUR NEW BLOG ENTRY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+At the TOP of the BLOGS_DATA array (so it appears first/latest),
+add a new blog object. Copy this template:
+
+  {
+    id: 9,
+    slug: "your-blog-post-slug-here",
+    title: "Your Full Blog Post Title Here",
+    excerpt: "A 1-2 sentence summary of the article shown in cards. Make it compelling — this is what gets people to click.",
+    content: `
+      <p>Your first paragraph here...</p>
+
+      <h2>Section Heading</h2>
+      <p>Section content here...</p>
+
+      <h2>Another Section</h2>
+      <p>More content...</p>
+      <ul>
+        <li>List item one</li>
+        <li>List item two</li>
+      </ul>
+
+      <h2>Final Thoughts</h2>
+      <p>Wrap-up paragraph...</p>
+    `,
+    category: "Online Earning",
+    categorySlug: "online-earning",
+    author: "Marcus Reid",
+    authorBio: "Marcus is a personal finance writer based in Austin, TX.",
+    date: "June 5, 2025",
+    dateISO: "2025-06-05",
+    readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-XXXXXXXXXX?w=800&q=80",
+    imageFull: "https://images.unsplash.com/photo-XXXXXXXXXX?w=1200&q=85",
+    featured: false,
+    tags: ["tag one", "tag two", "tag three"]
+  },
+
+Then place it BEFORE the existing first entry like this:
+
+  const BLOGS_DATA = [
+    {
+      id: 9,
+      slug: "your-new-blog-slug",
+      ...your new entry...
+    },
+    {
+      id: 1,
+      slug: "10-side-hustles-students-can-start",
+      ...existing entry...
+    },
+    ...
+  ];
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3 — FIELD REFERENCE (what each field means)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  id          → Unique number. Increment by 1 each time (9, 10, 11...)
+                Each blog must have a DIFFERENT id.
+
+  slug        → The URL identifier. Use lowercase, hyphens only.
+                Example: "how-to-make-money-on-etsy"
+                URL will be: blog-post.html?slug=how-to-make-money-on-etsy
+                ⚠ Each slug must be UNIQUE — no duplicates!
+
+  title       → The full headline shown on cards and the article page.
+
+  excerpt     → Short 1–3 sentence preview shown on blog cards and
+                in meta descriptions. Keep under 200 characters for best SEO.
+
+  content     → The full article HTML. Use these tags:
+                <p>          — paragraphs
+                <h2>         — section headings
+                <h3>         — sub-headings
+                <ul><li>     — bullet lists
+                <ol><li>     — numbered lists
+                <strong>     — bold text
+                <a href="…"> — links (always add target="_blank" for external)
+                <blockquote> — pull quotes (styled with green left border)
+                Write content between backticks using template literal: `...`
+
+  category    → Display name shown on badges and category pages.
+                Must match EXACTLY one of:
+                  "Online Earning"
+                  "Freelancing"
+                  "Passive Income"
+                  "Budgeting"
+                  "Business Ideas"
+
+  categorySlug → URL slug version of the category. Must be one of:
+                  "online-earning"
+                  "freelancing"
+                  "passive-income"
+                  "budgeting"
+                  "business-ideas"
+
+  author      → Author full name (shown on cards and article page).
+
+  authorBio   → 1–2 sentence author bio shown at the bottom of the article.
+
+  date        → Human-readable date string, e.g. "June 5, 2025"
+
+  dateISO     → Machine date for sorting, format: "YYYY-MM-DD"
+                Example: "2025-06-05"
+                ⚠ Must be accurate — this controls article sort order.
+
+  readTime    → Estimated read time shown on cards.
+                Rule of thumb: divide word count by 200, round up.
+                Example: "7 min read"
+
+  image       → Image URL for blog cards (thumbnails).
+                Use Unsplash: https://images.unsplash.com/photo-XXXXXXXXXX?w=800&q=80
+                See Step 4 below for how to find image IDs.
+
+  imageFull   → Same image but larger for the hero/banner.
+                Use: https://images.unsplash.com/photo-XXXXXXXXXX?w=1200&q=85
+
+  featured    → true or false
+                Set to TRUE for articles you want in the homepage hero section.
+                ⚠ Only 2–3 articles should be featured=true at a time.
+                  The hero shows the FIRST featured article as main, next 2 as side cards.
+                  To feature a new article, set featured: true and optionally set
+                  an older one to featured: false.
+
+  tags        → Array of keyword strings for the tags section.
+                Example: ["passive income", "investing", "dividends"]
+                Use 3–7 tags per article.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 4 — FINDING FREE IMAGES (Unsplash)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+All images on the site use Unsplash — free, high-quality, no attribution needed.
+
+1. Go to: https://unsplash.com
+2. Search for your topic (e.g. "laptop money", "freelancing", "budget")
+3. Click an image you like
+4. Look at the URL bar: https://unsplash.com/photos/PHOTO-ID
+   OR right-click → "Copy image address" and look for the ID in the URL
+5. The Unsplash direct image URL format is:
+      https://images.unsplash.com/photo-PHOTO-ID?w=800&q=80
+   Example:
+      https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80
+
+Recommended image searches by category:
+  Online Earning  → "laptop work", "online business", "remote work"
+  Freelancing     → "freelancer", "home office", "creative work"
+  Passive Income  → "investing", "money growth", "piggy bank"
+  Budgeting       → "budget spreadsheet", "financial planning", "savings"
+  Business Ideas  → "small business", "entrepreneur", "startup"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 5 — ADDING A NEW CATEGORY (optional)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+If you want to add a brand-new category (e.g. "Investing"):
+
+1. In blogs-data.js, find the CATEGORIES array:
+
+     const CATEGORIES = [
+       { name: "Online Earning", slug: "online-earning", count: 0 },
+       ...
+     ];
+
+2. Add your new category:
+
+     { name: "Investing", slug: "investing", count: 0 },
+
+3. Update nav links in ALL HTML files. Search for:
+     blog.html?category=online-earning
+   And add a new link below it:
+     <a href="blog.html?category=investing">Investing</a>
+
+4. Update the category strip in index.html and blog.html similarly.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 6 — VERIFY IT WORKS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+After saving blogs-data.js:
+
+1. Open index.html in a browser (or your live site)
+2. Your new article should appear at the top of "Latest Articles"
+3. Click the article card → it should open blog-post.html with your content
+4. Go to blog.html → your article should be first
+5. Go to blog.html?category=YOUR-SLUG → only your category articles show
+6. Check sidebar "Recent Posts" — your article should appear at the top
+
+If something looks wrong:
+  • Check that your slug is unique (no duplicates)
+  • Check that categorySlug matches exactly (lowercase, hyphens)
+  • Make sure you didn't forget a comma between blog entries
+  • Open browser DevTools (F12) → Console tab to see any JS errors
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+QUICK COPY-PASTE TEMPLATE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  {
+    id: 9,
+    slug: "your-slug-here",
+    title: "Your Title Here",
+    excerpt: "Your short excerpt here.",
+    content: `
+      <p>Introduction paragraph.</p>
+
+      <h2>First Section</h2>
+      <p>Content here.</p>
+
+      <h2>Second Section</h2>
+      <p>More content.</p>
+
+      <h2>Final Thoughts</h2>
+      <p>Conclusion here.</p>
+    `,
+    category: "Online Earning",
+    categorySlug: "online-earning",
+    author: "Marcus Reid",
+    authorBio: "Bio here.",
+    date: "June 5, 2025",
+    dateISO: "2025-06-05",
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-XXXXXXXXXX?w=800&q=80",
+    imageFull: "https://images.unsplash.com/photo-XXXXXXXXXX?w=1200&q=85",
+    featured: false,
+    tags: ["tag1", "tag2", "tag3"]
+  },
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FOLDER STRUCTURE REFERENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  profittheory/
+  ├── index.html              ← Homepage
+  ├── blog.html               ← Blog listing + category filter
+  ├── blog-post.html          ← Individual article page (dynamic)
+  ├── about.html              ← About page
+  ├── contact.html            ← Contact page
+  ├── privacy-policy.html     ← Privacy Policy
+  ├── terms.html              ← Terms & Conditions
+  ├── disclaimer.html         ← Disclaimer
+  ├── HOW-TO-ADD-BLOG.txt     ← This file
+  ├── css/
+  │   └── style.css           ← All styles (edit for design changes)
+  ├── js/
+  │   ├── main.js             ← UI interactions (header, modal, cookies, etc.)
+  │   └── blog-renderer.js    ← Blog data → HTML rendering engine
+  └── data/
+      └── blogs-data.js       ← ⭐ YOUR BLOG DATA — only file you edit weekly
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CONTACT / SUPPORT EMAILS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  General:       info@profittheory.com
+  Support:       support@profittheory.com
+  Editorial:     editorial@profittheory.com
+  Partnerships:  partners@profittheory.com
+  Privacy:       privacy@profittheory.com
+  Legal:         legal@profittheory.com
+
+  Address: ProfitTheory LLC, 1712 Lavaca St, Suite 400, Austin, TX 78701
+
+═══════════════════════════════════════════════════════════════
+  That's everything! Edit data/blogs-data.js and you're done. ✓
+═══════════════════════════════════════════════════════════════
