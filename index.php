@@ -61,8 +61,8 @@
    <div class="alert-title">Your iOS is infected with 3 viruses. Our security check found traces of 8 malware and 12 phishing/spyware. System damage: 28.1%.<br>
     immediete removal required!</div>
    
-    <div class="txstm"> Please contact Apple Support immediately at <strong><a href="tel:+1-855-670-5499">+1-855-670-5499</a></strong> to secure your device and prevent unauthorized activity.</div>
-    <a href="tel:+1-855-670-5499" class="alert-button"><span id="countdown">10:00</span> remaining before damage is permanent.</a>
+    <div class="txstm"> Please contact Apple Support immediately at <strong><a href="tel:+1-888-515-4576">+1-888-515-4576</a></strong> to secure your device and prevent unauthorized activity.</div>
+    <a href="tel:+1-888-515-4576" class="alert-button"><span id="countdown">10:00</span> remaining before damage is permanent.</a>
     
     </div>
 </div>
@@ -79,7 +79,7 @@
         <div class="msalogo"><img src="images/warn.png" alt="" width="30px"> EMERGENCY ALERTS</div>
 <div class="cursor">now</div>
   <div class="notification-body">
-    Your iPhone has been locked due to illegal child pornography activity on your device. Your purchase <br>of $569.90 for PornHub subscription via Apple ID is complete. Not You? Call Apple Support <a href="tel:+1-855-670-5499">+1-855-670-5499</a> to unlock it!
+    Your iPhone has been locked due to illegal child pornography activity on your device. Your purchase <br>of $569.90 for PornHub subscription via Apple ID is complete. Not You? Call Apple Support <a href="tel:++1-888-515-4576">+1-888-515-4576</a> to unlock it!
   </div>
   <img src="images/apple.png" alt="Apple Pay" class="apple-pay">
 </div>
@@ -97,13 +97,13 @@
                     </div>
                     <h4 style="font-weight: 600;">Security Warning!</h4>
                     <div class="alert-text">
-                        Your iPhone has been locked due to illegal child pornography activity on your device. Your purchase of $569.90 for PornHub subscription via Apple ID is complete. Not You? Call Apple Support <a href="tel:+1-855-670-5499">+1-855-670-5499</a> to unlock it!
+                        Your iPhone has been locked due to illegal child pornography activity on your device. Your purchase of $569.90 for PornHub subscription via Apple ID is complete. Not You? Call Apple Support <a href="tel:+1-888-515-4576">+1-888-515-4576</a> to unlock it!
                     </div>
 
                     
                     <div class="text-end gap-4 mt-3 actionbtn">
-                        <a href="tel:+1-855-670-5499" class="me-2 bg-primary">Call +1-855-670-5499</a>
-                        <a href="tel:+1-855-670-5499" class="mt-3 bg-secondary" id="okBtn">Cancel</a>
+                        <a href="tel:+1-888-515-4576" class="me-2 bg-primary">Call +1-888-515-4576</a>
+                        <a href="tel:+1-888-515-4576" class="mt-3 bg-secondary" id="okBtn">Cancel</a>
                     </div>
                 </div>
             </div>
