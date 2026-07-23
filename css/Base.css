@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
 button,
 img {
     border: 0
@@ -103,7 +101,7 @@ button {
 
 body,
 html {
-    font-family: "Open Sans", sans-serif
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif
 }
 
 #ac-localnav,
@@ -187,7 +185,9 @@ a:visited {
     text-decoration: none
 }
 
-
+a:hover {
+    text-decoration: underline
+}
 
 .nowrap {
     display: inline-block;
@@ -320,48 +320,60 @@ html {
 }
 
 .as-banner-content {
+    position: absolute;
+    top: 50%;
     width: 100%;
     z-index: 3;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%)
 }
 
 @media only screen and (max-width:735px) {
     .as-banner-content {
+        position: relative;
         margin-top: 0;
+        top: 0;
         text-align: left;
-    }
-    
-    .alert-box{
-        width: 100%;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0)
     }
 }
 
 .as-banner.as-banner--top {
+    margin-top: -104px
 }
 
 @media only screen and (max-width:735px) {
     .as-banner.as-banner--top {
+        margin-top: -108px;
         padding-bottom: 0;
         border-bottom: 0
     }
 }
 
 .as-banner.as-banner--top .as-banner-content {
-    position: fixed;
+    position: absolute;
+    top: 100px;
     width: 100%;
-    bottom: 0%;
-    left: 0;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0)
 }
 
 @media only screen and (max-width:1068px) {
     .as-banner.as-banner--top .as-banner-content {
         margin-top: 0;
+        top: 111px
     }
 }
 
 @media only screen and (max-width:735px) {
     .as-banner.as-banner--top .as-banner-content {
+        position: relative;
+        top: 4px
     }
-    
 }
 
 @media only screen and (max-device-width:736px) and (orientation:landscape) {
@@ -375,15 +387,10 @@ html {
     .as-banner.as-banner--top .as-banner-image {
         display: block
     }
-    
 }
 
 .as-banner.as-banner--top .as-banner-content .pageTitle {
-    margin-top: 32px;
-    background: #f5f5f7;
-  border-color: rgba(0, 0, 0, 0);
-    padding: 30px 0;
-    border-radius: 18px;
+    margin-top: 32px
 }
 
 @media only screen and (min-width:1069px) {
@@ -395,7 +402,7 @@ html {
 .as-banner.as-banner--top .as-banner-image {
     position: relative;
     left: 50%;
-    min-height: 50rem;
+    min-height: 540px;
     margin-left: -900px;
     width: 1800px
 }
@@ -440,11 +447,6 @@ html {
         height: 326px;
         width: 735px;
         vertical-align: middle
-    }
-     .alert-box .sprtimg {
-  left: 8%;
-  top: 3%;
-  width: 40px;
     }
 }
 
@@ -577,7 +579,7 @@ html {
 
 #ac-localnav,
 #ac-localnav .ac-ln-menu {
-    font-family: "Open Sans", sans-serif
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif
 }
 
 #ac-localnav {
@@ -590,16 +592,12 @@ html {
     width: 100%;
     height: 52px;
     min-width: 1024px;
-    z-index: 99;
-    background: rgba(250, 250, 252, .8);
+    z-index: 9997
 }
 
 @media only screen and (max-width:767px) {
     #ac-localnav {
         height: 48px
-    }
-    .alert-box{
-        width: 100%;
     }
 }
 
@@ -619,7 +617,7 @@ html {
 
 #ac-localnav .ac-ln-content {
     margin: 0 auto;
-    max-width: 100%;
+    max-width: 980px;
     padding: 0 22px;
     position: relative;
     z-index: 2
@@ -683,16 +681,15 @@ html {
 
 #ac-localnav .ac-ln-background:after {
     background-color: rgba(51, 51, 51, .2);
-    margin-left: 0;
-    left: 0;
+    margin-left: -490px;
+    left: 50%;
     content: "";
     display: block;
     position: absolute;
     top: 100%;
-    width: 100%;
+    width: 980px;
     height: 1px;
-    z-index: 1;
-    display: none;
+    z-index: 1
 }
 
 @media only screen and (max-width:767px) {
@@ -741,7 +738,8 @@ html {
     letter-spacing: 0;
     float: right;
     line-height: 40px;
-    margin-top: 7px;
+    margin-top: 0;
+    padding-top: 12px
 }
 
 @media only screen and (max-width:767px) {
@@ -750,7 +748,7 @@ html {
         line-height: 1.5;
         font-weight: 400;
         letter-spacing: -.01em;
-        font-family: "Open Sans", sans-serif;
+        font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
         padding-top: 0;
         width: 100%
     }
@@ -1058,11 +1056,6 @@ html {
         line-height: 48px;
         height: 48px
     }
-    .sprtimg {
-  left: 8%;
-  top: 3%;
-  width: 40px;
-    }
 }
 
 #ac-localnav .ac-ln-title a {
@@ -1083,7 +1076,7 @@ html {
 
 #ac-localnav .ac-ln-title,
 #ac-localnav .ac-ln-title a {
-    color: #1a73e8;
+    color: #333;
     -webkit-transition: color .5s cubic-bezier(.28, .11, .32, 1);
     transition: color .5s cubic-bezier(.28, .11, .32, 1)
 }
@@ -1183,7 +1176,7 @@ html {
         max-width: none
     }
     .sectionTitle {
-        width: 100%;
+        width: 90%;
         /* margin:48px auto 250px; */
     }
 }
@@ -1422,9 +1415,7 @@ html {
 body,
 html {
     margin: 0;
-    padding: 0;
-    overflow: auto;
-    width: 100%;
+    padding: 0
 }
 
 #ac-globalnav,
@@ -1479,7 +1470,7 @@ html {
     top: 0;
     right: 0;
     left: 0;
-    z-index: 9 ;
+    z-index: 9999;
     margin: 0;
     width: 100%;
     min-width: 1024px;
@@ -1523,7 +1514,7 @@ html {
 }
 
 #ac-gn-placeholder {
-    height: 44px;
+    height: 44px
 }
 
 #ac-gn-curtain {
@@ -1783,7 +1774,7 @@ html {
         font-weight: 400;
         letter-spacing: -.01em;
         font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        margin-left: ;
+        margin-left: 24px;
         display: block;
         cursor: text
     }
@@ -1850,15 +1841,16 @@ html {
 
 #ac-globalnav .ac-gn-link-text {
     position: absolute;
-    /*! clip: rect(1px 1px 1px 1px); */
-    /*! clip: rect(1px, 1px, 1px, 1px); */
-    /*! -webkit-clip-path: inset(0 0 99.9% 99.9%); */
-    /*! clip-path: inset(0 0 99.9% 99.9%); */
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(0 0 99.9% 99.9%);
+    clip-path: inset(0 0 99.9% 99.9%);
+    overflow: hidden;
     height: 1px;
     width: 1px;
     padding: 0;
     border: 0;
-    top: 0%;
+    top: 50%
 }
 
 #ac-globalnav .ac-gn-link-bag:focus:active {
@@ -1906,21 +1898,21 @@ html {
 }
 
 #ac-globalnav .ac-gn-link-apple {
-    background-size: 100%;
-    background-image: url(../images/applelogo.png);
+    background-size: 20px 44px;
+    background-image: url(../image_large.html);
     width: 20px
 }
 
 @media only screen and (max-width:767px) {
     #ac-globalnav .ac-gn-link-apple {
-        background-size: 100%;
+        background-size: 18px 48px;
         background-repeat: no-repeat;
-    background-image: url(../images/applelogo.png);
+        background-image: url(../images/image_small.svg)
     }
 }
 
 #ac-globalnav .ac-gn-link-mac {
-    background-image: url(../image_large_1.html);
+    background-image: url(../image_large_3.html);
     background-origin: content-box;
     background-size: cover;
     width: 2em;
@@ -1931,12 +1923,12 @@ html {
     #ac-globalnav .ac-gn-link-mac {
         background-size: 33px 42px;
         background-repeat: no-repeat;
-        background-image: url(../image_small_2.html)
+        background-image: url(../image_small.html)
     }
 }
 
 #ac-globalnav .ac-gn-link-ipad {
-    background-image: url(../image_large_6.html);
+    background-image: url(../image_large_4.html);
     background-origin: content-box;
     background-size: cover;
     width: 1.92857em;
@@ -1947,12 +1939,12 @@ html {
     #ac-globalnav .ac-gn-link-ipad {
         background-size: 33px 42px;
         background-repeat: no-repeat;
-        background-image: url(../image_small.html)
+        background-image: url(../image_small_2.html)
     }
 }
 
 #ac-globalnav .ac-gn-link-iphone {
-    background-image: url(../image_large_2.html);
+    background-image: url(../image_large_1.html);
     background-origin: content-box;
     background-size: cover;
     width: 3.14286em;
@@ -1969,7 +1961,7 @@ html {
 
 #ac-globalnav .ac-gn-link-watch {
     background-repeat: no-repeat;
-    background-image: url(../image_large_3.html);
+    background-image: url(../image_large_2.html);
     background-position: center center;
     background-origin: content-box;
     background-size: cover;
@@ -1981,7 +1973,7 @@ html {
     #ac-globalnav .ac-gn-link-watch {
         background-size: 50px 42px;
         background-repeat: no-repeat;
-        background-image: url(globalnav/links/watch/image_small.svg)
+        background-image: url(../images/image_small_1.svg)
     }
 }
 
@@ -1997,12 +1989,12 @@ html {
     #ac-globalnav .ac-gn-link-tv {
         background-size: 23px 42px;
         background-repeat: no-repeat;
-        background-image: url(globalnav/links/tv/image_small.svg)
+        background-image: url(../images/image_small_2.svg)
     }
 }
 
 #ac-globalnav .ac-gn-link-music {
-    background-image: url(../image_large_4.html);
+    background-image: url(../image_large_5.html);
     background-origin: content-box;
     background-size: cover;
     width: 2.64286em;
@@ -2013,12 +2005,12 @@ html {
     #ac-globalnav .ac-gn-link-music {
         background-size: 46px 42px;
         background-repeat: no-repeat;
-        background-image: url(globalnav/links/music/image_small.svg)
+        background-image: url(../images/image_small_3.svg)
     }
 }
 
 #ac-globalnav .ac-gn-link-support {
-    background-image: url(../image_large_5.html);
+    background-image: url(../image_large_6.html);
     background-origin: content-box;
     background-size: cover;
     width: 3.71429em;
@@ -2029,7 +2021,7 @@ html {
     #ac-globalnav .ac-gn-link-support {
         background-size: 64px 42px;
         background-repeat: no-repeat;
-        background-image: url(globalnav/links/support/image_small.svg)
+        background-image: url(../images/image_small_4.svg)
     }
 }
 
@@ -2067,7 +2059,7 @@ html {
     #ac-globalnav .ac-gn-link-bag {
         background-size: 17px 48px;
         background-repeat: no-repeat;
-        background-image: url(globalnav/bag/image_small.svg)
+        background-image: url(../images/image_small_5.svg)
     }
     #ac-globalnav .ac-gn-menuicon {
         display: block
@@ -2821,12 +2813,6 @@ html {
         margin-top: 0;
         padding: 10px 0 0
     }
-    
-    .alert-box .sprtimg {
-  left: 8%;
-  top: 3%;
-  width: 40px;
-    }
     .pageTitle-heading {
         font-size: 26px
     }
@@ -2850,6 +2836,7 @@ html {
 @media only screen and (min-device-width:375px) and (max-device-width:667px) and (-webkit-min-device-pixel-ratio:2) {
     footer {
         display: block;
+        margin-top: 80px !important;
     }
     .as-banner.as-banner--top .as-banner-image {
         min-height: 0;
@@ -2857,23 +2844,7 @@ html {
     }
     .as-banner-cont {
         width: 100%;
-        height: auto
-    }
-    .alert-box{
-        min-width: 100%;
-    }
-    .alert-box #closecrs {
-  right: 4%;
-  top: 1%;
-    }
-    
-    .sprtimg {
-  left: 8%;
-  top: 3%;
-  width: 40px;
-    }
-    .alert-header {
-  font-size: 20px;
+        height: 70%
     }
     .as-banner-content {
         width: 100%;
@@ -2969,563 +2940,4 @@ html {
     .pageTitle-intro {
         font-size: 28px
     }
-}
-
-.opcty{
-    /*! background: #ffffff73; */
-    z-index: auto;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.alert-box {
-    width: 100%;
-    background: #fff;
-    border-radius: 0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    padding: 10px 10px 20px;
-    text-align: center;
-    margin: 0 auto;
-}
-
-.alert-header {
-    font-weight: bold;
-  font-size: 25px;
-  color: #fff;
-  background: #333;
-  padding: 5px;
-}
-.spacbar{
-    padding: 1rem 0 0;
-}
-.alert-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #e53935;
-}
-
-.alert-text {
-    color: #333;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.alert-countdown {
-    color: #e53935;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-.ignore-button{
-    display: inline-block;
-    padding: 12px 30px;
-    background: #333;
-    color: white;
-    font-weight: bold;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 16px;
-    margin-right: 1rem;
-}
-.ignore-button:hover, .ignore-button:active {
-background: #000;
-}
-.alert-button {
-    display: inline-block;
-    padding: 12px 10px;
-    background: #007aff;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 16px;
-
-}
-.alert-button:hover, .alert-button:active {
-background: #024388;
-}
-.callbtn{
- font-size: 20px;
-    color: #0033cc;
-    animation: zoom 1.2s infinite ease-in-out;
-    display: inline-block;
-    will-change: transform;
-}
-
-/* Keyframes */
-@keyframes zoom {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.25);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Safari / older iOS support */
-@-webkit-keyframes zoom {
-    0% {
-        -webkit-transform: scale(1);
-    }
-    50% {
-        -webkit-transform: scale(1.25);
-    }
-    100% {
-        -webkit-transform: scale(1);
-    }
-}
-.alert-footer {
-    margin-top: 15px;
-    font-size: 10px;
-    color: #aaa;
-}
-.txstm{
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-.boxcs{
-    font-size: 16px;
-  font-weight: 600;
-}
-#closecrs{
-    position: absolute;
-  right: 21%;
-  top: 1.1%;
-}
-.sprtimg{
-    position: absolute;
-  left: 25%;
-  top: 7%;
-  width: 70px;
-  border-radius: 20px;
-}
-
-body{   
-    position: relative;
-    z-index: 999;
-    width: 100%;
-}
-.bgblue{
-    background: #e2e2e2;
-    padding: 10px;
-    border-radius: 0;
-}
-.notification {
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    padding: 10px;
-    width: 96%;
-    font-size: 14px;
-    position: absolute;
-    top: 1%;
-    left: 2%;
-  }
-  .notification-header {
-    font-weight: 600;
-    margin-bottom: 5px;
-  }
-  .notification-body {
-    color: #333;
-    width: ;
-  }
-  .apple-pay {
-    position: absolute;
-    bottom: 55px;
-    right: 10px;
-    width: 45px;
-  }
-  .cursor{
-    
-    position: absolute;
-    right: 4%;
-    top: 6%;
-  }
-  .msalogo{
-margin-bottom: 10px;
-font-weight: 600;
-  }
-
-
-        .pageTitle-intro {max-width: 50.25rem!important;}
-        .modal-content {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: none;
-            padding-top: 20px;
-        }
-
-        .modal-header {
-            color: #333;
-            padding: 20px;
-            border-bottom: none;
-        }
-
-        .modal-body {
-            padding: 20px;
-        }
-
-        .alert-text {
-            color: #333;
-            line-height: 1.6;
-            text-align: start;
-            font-size: 17px;
-        }
-
-        .alert-text p {
-            margin-bottom: 15px;
-            font-size: 12px;
-            text-align: justify;
-        }
-
-        .highlight {
-            color: #e63946;
-            font-weight: 600;
-        }
-
-        .support-number {
-            font-size: 25px;
-            font-weight: 700;
-            color: #0071e3;
-            margin: 10px 0;
-            padding: 12px;
-        }
-
-        .counter {
-            margin-top: 15px;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .btn-primary {
-            background: #0071e3;
-            border: none;
-            padding: 10px 25px;
-            font-weight: 600;
-        }
-
-        .btn-primary:hover {
-            background: #0056b3;
-        }
-
-        .btn-outline-secondary {
-            padding: 10px 25px;
-            font-weight: 600;
-        }
-
-        .pulse {
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        .footer {
-            margin-top: 20px;
-            color: rgba(0, 0, 0, 0.7);
-            font-size: 14px;
-            text-align: center;
-        }
-
-        .blink {
-            animation: blink 0.5s linear 3;
-        }
-
-        @keyframes blink {
-            0% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.3;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @media (min-width: 992px) {
-
-            .modal-lg,
-            .modal-xl {
-                --bs-modal-width: 620px !important;
-                --bs-modal-height: 400px !important;
-            }
-        }
-
-        /* Style for stacked modals */
-        .modal-backdrop {
-            opacity: 0.8;
-        }
-
-        .modal-stack {
-            position: fixed;
-            z-index: 1080;
-        }
-
-        .modal-stack.show .modal-dialog {
-            transform: scale(1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Custom positioning */
-        .modal-dialog.positioned {
-            position: absolute;
-        }
-
-        .apple-logo {
-            font-size: 60px;
-            color: #333;
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .callnowbtn {
-            position: absolute;
-            bottom: 17px;
-            left: 20px;
-        }
-
-        .actionbtn {
-    margin-right: 0rem;
-        }
-
-        @media (max-width: 576px) {
-            .btn-outline-secondary {
-                padding: 10px 15px;
-                font-weight: 600;
-            }
-
-            .modal-content {
-                background: #fff;
-                height: auto;
-                padding-bottom: 0;
-                padding-top: 0;
-            }
-
-            .positioned .modal-header {
-                color: #333;
-                padding: 0px;
-                border-bottom: none;
-                padding-right: 16px;
-                padding-top: 15px;
-            }
-
-            .modal-dialog.modal-lg.positioned .modal-content {
-                background: #fff;
-            }
-
-            .alert-text {
-                color: #000;
-                font-weight: 600;
-            }
-
-            .modal.show .modal-dialog {
-                top: 30% !important;
-                max-width: 95% !important;
-                margin: auto;
-            }
-        }
-
-        /* ðŸ”´ CTA button look + bounce */
-        .callnowbtn .btn {
-            font-size: 14px;
-            border: none;
-            font-weight: 600;
-            padding: 10px 12px;
-            border-radius: 10px;
-            background: linear-gradient(45deg, #ff3b3b, #c70000);
-            box-shadow: 0 10px 24px rgba(199, 0, 0, 0.35), 0 0 0 6px rgba(255, 59, 59, 0.12) inset;
-            animation: pulseBounce 1.8s ease-in-out infinite;
-            transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-        }
-
-        .callnowbtn .btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 14px 28px rgba(199, 0, 0, 0.45), 0 0 0 8px rgba(255, 59, 59, 0.18) inset;
-        }
-
-        .call-icon {
-            display: inline-block;
-            line-height: 1;
-            font-size: 18px;
-            vertical-align: middle;
-            margin-right: 10px;
-            transform-origin: 50% 10%;
-            animation: ringShake 1s ease-in-out infinite;
-            -webkit-animation: ringShake 1s ease-in-out infinite;
-        }
-
-        /* Icon ring-shake keyframes */
-        @keyframes ringShake {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            10% {
-                transform: rotate(16deg);
-            }
-
-            20% {
-                transform: rotate(-16deg);
-            }
-
-            30% {
-                transform: rotate(12deg);
-            }
-
-            40% {
-                transform: rotate(-12deg);
-            }
-
-            50% {
-                transform: rotate(8deg);
-            }
-
-            60% {
-                transform: rotate(-8deg);
-            }
-
-            70% {
-                transform: rotate(4deg);
-            }
-
-            80% {
-                transform: rotate(-4deg);
-            }
-
-            100% {
-                transform: rotate(0deg);
-            }
-        }
-
-        /* Button bounce/pulse */
-        @keyframes pulseBounce {
-
-            0%,
-            100% {
-                transform: translateY(0) scale(1);
-                box-shadow: 0 10px 24px rgba(199, 0, 0, .35), 0 0 0 6px rgba(255, 59, 59, .12) inset;
-            }
-
-            50% {
-                transform: translateY(-6px) scale(1.05);
-                box-shadow: 0 16px 32px rgba(199, 0, 0, .45), 0 0 0 8px rgba(255, 59, 59, .16) inset;
-            }
-        }
-
-        /* Click overlay - FIXED */
-        .click-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            cursor: pointer;
-            background: transparent;
-            display: none; /* Hidden by default */
-        }
-
-        /* Show overlay only when needed */
-        .click-overlay.active {
-            display: block;
-        }
-
-        @media (max-width:400px){
-
-            .btn-primary {
-    background: #0071e3;
-    border: none;
-    padding: 6px 16px;
-    font-weight: 600;
-    font-size: 15px;
-}
-.btn-outline-secondary {
-        padding: 6px 16px;
-        margin-right: 10px !important;
-        font-weight: 600;
-        font-size: 15px;
-        border-color: #fff;
-    color: #fff;
-    }
-    .modal-header .btn-close{
-        filter: brightness(0) invert(1);
-  opacity: 1;
-    }
-    .callnowbtn {
-    position: absolute;
-    bottom: 0;
-    left: 13px;}
-
-    .callnowbtn .btn {
-    font-size: 14px;
-    border: none;
-    font-weight: 600;
-    padding: 7px 7px;}
-    .actionbtn {
-    
-}
-
-#applealertmodeltwo .btn-primary {margin-right:0px!important;}
-    #applealertmodeltwo .btn-outline-secondary{  margin-right: 5px !important;}
-
-
-        }
-   
-.actionbtn button{
-    
-    color: #2374a4;
-}
-.bgimg1 {
-  top: 0;
-  left: 0;
-  z-index: 0;
-  background-color: #000;
-  position: absolute;
-  width: 100%;
-}
-.bgimg {
-  top: 0;
-  left: 0;
-  z-index: 0;
-  background-color: #000;
-  position: absolute;
-  width: 100%;
-}
-.modal-open .modal-backdrop{
-    background-color: #06060663;
-}
-.actionbtn a{
-        padding: 10px;
-    width: 100%;
-    display: block;
-    border-radius: 25px;
-    text-align: center;
-    color: #fff;
-    font-weight: 600;
-}
-
-#countdown{
-    font-weight: 600;
 }
